@@ -7,6 +7,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - run: gh version
       - run: gh -R "$GITHUB_REPOSITORY" pr ready 1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
